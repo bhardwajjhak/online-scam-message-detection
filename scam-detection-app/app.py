@@ -56,7 +56,10 @@ if st.button("Check Message"):
             return 1 / (1 + math.exp(-x))
 
         probability = sigmoid(score)
-        confidence_percent = round(probability * 100, 2)
+        confidence_percent =round(
+    max(probability, 1 - probability) * 100,
+    2
+)
        
         # STRONG KEYWORDS (IMPROVED DETECTION)
         spam_keywords = [
@@ -76,7 +79,7 @@ if st.button("Check Message"):
         keywords = ["win", "urgent", "bank", "otp", "verify", "click", "offer", "free", "prize"]
         keyword_flag = any(word in text.lower() for word in keywords)
 
-        if confidence_percent > 50 or keyword_flag:
+        if confidence_percent > 0.5 or keyword_flag:
            st.error(f"🚨 SPAM / SCAM MESSAGE DETECTED (Confidence: {confidence_percent}%)")
         else:
            st.success(f"✅ NOT SPAM MESSAGE (Confidence: {confidence_percent}%)")
