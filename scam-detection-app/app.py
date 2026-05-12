@@ -56,10 +56,7 @@ if st.button("Check Message"):
             return 1 / (1 + math.exp(-x))
 
         probability = sigmoid(score)
-        confidence_percent =round(
-    max(probability, 1 - probability) * 100,
-    2
-)
+        confidence_percent =round(probability * 100, 2)
        
         # STRONG KEYWORDS (IMPROVED DETECTION)
         spam_keywords = [
