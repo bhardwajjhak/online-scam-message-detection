@@ -37,7 +37,7 @@ This system uses:
 # 🛠️ Technologies Used
 
 - **Programming Language:** Python 
-- **Frontend & Deployment:** Streamlit Cloud  
+- **Frontend & Deployment:** streamlit/Streamlit Cloud  
 - **Machine Learning:** Scikit-learn - Linear SVM Algorithm
 - **NLP & Text Processing:** Regex, TF-IDF Vectorizer
 - **Data Handling:** Pandas, NumPy
